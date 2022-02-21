@@ -10,8 +10,8 @@ class User:
         '''
         init method that is ran on each instance of the class
         '''
-        self.login = user_name
-        self.passwod = password
+        self.user_name = user_name
+        self.password = password
 
     def save_user(self):
         '''

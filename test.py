@@ -23,3 +23,17 @@ class TestPasswordLocker(unittest.TestCase):
         User.user_list = []
         Credential.credential_list = []
 
+    def test_init(self):
+        '''
+        Assert that the instance methods were created successfully
+        '''
+        self.assertEqual(self.user1.user_name, 'Jdoe')
+        self.assertEqual(self.user1.password, 'password')
+        self.assertEqual(self.first_credential.user_name, 'Jdoe')
+        self.assertEqual(self.first_credential.platform_name, 'instagram')
+        self.assertEqual(
+            self.first_credential.platform_password, 'ig_password')
+
+        
+if __name__ == '__main__':
+    unittest.main()

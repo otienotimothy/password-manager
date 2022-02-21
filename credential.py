@@ -15,8 +15,8 @@ class Credential(User):
         '''
         credential class initialiser method
         '''
-        super.__init__(user_name, password)
-        self.user = user_name
+        super().__init__( user_name, password)
+        self.user_name = user_name
         self.platform_name = platform_name
         self.platform_password = platform_password
 
