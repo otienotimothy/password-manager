@@ -52,6 +52,9 @@ class TestPasswordLocker(unittest.TestCase):
         self.assertEqual(len(Credential.credential_list), 1)
 
 
+    def test_generate_credentials(self):
+        self.assertEqual(len(Credential.generate_credentials()), 10)
+
         
 if __name__ == '__main__':
     unittest.main()
