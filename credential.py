@@ -40,4 +40,12 @@ class Credential:
         credentials = [credential for credential in cls.credential_list if credential.user == login]
         return credentials
 
+    @classmethod
+    def delete_contact(cls, login):
+        '''
+        Delete a particular credential from the credential list class variable based a login user name
+        '''
+        for credential in cls.credential_list:
+            if credential.user == login:
+                cls.credential_list.remove(credential)
     
