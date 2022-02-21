@@ -57,11 +57,11 @@ class Credential(User):
         return credentials
 
     @classmethod
-    def delete_credential(cls, user_name):
+    def delete_credential(cls, user_name, credential_name):
         '''
         Delete a particular credential from the credential list class variable based a login user name
         '''
         for credential in cls.credential_list:
-            if credential.user_name == user_name:
+            if credential.user_name == user_name and credential.platform_name == credential_name:
                 cls.credential_list.remove(credential)
     

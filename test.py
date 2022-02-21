@@ -69,6 +69,17 @@ class TestPasswordLocker(unittest.TestCase):
 
         self.assertEqual(len(Credential.display_credentials('Jane')), 1)
 
+    def test_delete_credential(self):
+        '''
+        Assert that a user can delete a credential
+        '''
+        self.first_credential.save_credential()
+        self.second_credential = Credential(
+            'Jane', 'password2', 'instagram', 'ig_password2')
+        self.second_credential.save_credential()
+        
+        Credential.delete_credential('Jane', 'instagram')
+        self.assertEqual(len(Credential.credential_list), 1)
 
         
 if __name__ == '__main__':
