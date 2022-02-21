@@ -34,6 +34,16 @@ class TestPasswordLocker(unittest.TestCase):
         self.assertEqual(
             self.first_credential.platform_password, 'ig_password')
 
+    def test_saved_items(self):
+        '''
+        Assert that the user and credentials instances have been saved successfully
+        '''
+        self.user1.save_user()
+        self.first_credential.save_credential()
+
+        self.assertEqual(len(User.user_list), 1)
+        self.assertEqual(len(Credential.credential_list), 1)
+
         
 if __name__ == '__main__':
     unittest.main()
