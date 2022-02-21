@@ -32,12 +32,12 @@ class Credential:
         auth_credential = ''.join(choice(auth_string) for item in range(10))
         return auth_credential
 
-    # @classmethod
-    # def display_credentials(cls, login):
-    #     '''
-    #     Display a list of saved credentials
-    #     '''
-    #     credentials = [credential for credential in cls.credential_list if credential.user == login]
-    #     return credentials
+    @classmethod
+    def display_credentials(cls, login):
+        '''
+        Display a list of saved credentials
+        '''
+        credentials = [credential for credential in cls.credential_list if credential.user == login]
+        return credentials
 
     
