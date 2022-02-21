@@ -14,4 +14,10 @@ class Credential:
         self.platform_name = platform_name
         self.platform_password = platform_password
 
+    def save_credential(self):
+        '''
+        Add the created credential instatnce to the class variable credential_list
+        '''
+        Credential.credential_list.append(self)
+
     
