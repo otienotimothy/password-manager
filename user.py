@@ -21,4 +21,7 @@ class User:
     
     @classmethod
     def get_all_users(cls):
+        '''
+        Get a list of all save users
+        '''
         return cls.user_list
