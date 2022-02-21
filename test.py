@@ -44,6 +44,14 @@ class TestPasswordLocker(unittest.TestCase):
         self.assertEqual(len(User.user_list), 1)
         self.assertEqual(len(Credential.credential_list), 1)
 
+    def test_add_existing_credentials(self):
+        '''
+        Assert that a user with new credentials can save their credentials
+        '''
+        self.first_credential.add_existing_credentials('facebook', 'fb_password')
+        self.assertEqual(len(Credential.credential_list), 1)
+
+
         
 if __name__ == '__main__':
     unittest.main()
