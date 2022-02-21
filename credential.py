@@ -1,3 +1,6 @@
+from random import choice
+import string
+
 class Credential:
     '''
     Credentials class to describe saved credantials
@@ -19,5 +22,13 @@ class Credential:
         Add the created credential instatnce to the class variable credential_list
         '''
         Credential.credential_list.append(self)
+
+    def generate_credentials(self):
+        '''
+        A method to auto-generate user credentials
+        '''
+        auth_string = string.ascii_uppercase + string.digits + string.ascii_lowercase
+        auth_credential = ''.join(choice(auth_string) for item in range(10))
+        return auth_credential
 
     
