@@ -11,11 +11,11 @@ class Credential(User):
     # A list of created/store credentials
     credential_list = []
 
-    def __init__(self, user, platform_name, platform_password) -> None:
+    def __init__(self, user_name, password, platform_name, platform_password) -> None:
         '''
         credential class initialiser method
         '''
-        self.user = user
+        self.user = user_name
         self.platform_name = platform_name
         self.platform_password = platform_password
 
