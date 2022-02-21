@@ -11,10 +11,11 @@ class Credential(User):
     # A list of created/store credentials
     credential_list = []
 
-    def __init__(self, user_name, password, platform_name, platform_password) -> None:
+    def __init__(self, user_name, password, platform_name, platform_password = "") -> None:
         '''
         credential class initialiser method
         '''
+        super.__init__(user_name, password)
         self.user = user_name
         self.platform_name = platform_name
         self.platform_password = platform_password
@@ -24,6 +25,14 @@ class Credential(User):
         Add the created credential instatnce to the class variable credential_list
         '''
         Credential.credential_list.append(self)
+
+    def add_existing_credentials(self, auth_plaftform, auth_password):
+        '''
+        Add an existing credential to credential list variable class
+        '''
+        self.platform_name = auth_plaftform
+        self.platform_password = auth_password
+        self.save_credential()
 
     @staticmethod
     def generate_credentials():
