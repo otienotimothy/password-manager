@@ -53,7 +53,22 @@ class TestPasswordLocker(unittest.TestCase):
 
 
     def test_generate_credentials(self):
+        '''
+        Assert that a user can auto generate a password
+        '''
         self.assertEqual(len(Credential.generate_credentials()), 10)
+
+    def test_display_credentials(self):
+        '''
+        Assert that a user can view a list of their credentials
+        '''
+        self.first_credential.save_credential()
+        self.second_credential = Credential(
+            'Jane', 'password2', 'instagram', 'ig_password2')
+        self.second_credential.save_credential()
+
+        self.assertEqual(len(Credential.display_credentials('Jane')), 1)
+
 
         
 if __name__ == '__main__':

@@ -53,15 +53,15 @@ class Credential(User):
         '''
         Display a list of saved credentials
         '''
-        credentials = [credential for credential in cls.credential_list if credential.user == user_name]
+        credentials = [credential for credential in cls.credential_list if credential.user_name == user_name]
         return credentials
 
     @classmethod
-    def delete_credential(cls, login):
+    def delete_credential(cls, user_name):
         '''
         Delete a particular credential from the credential list class variable based a login user name
         '''
         for credential in cls.credential_list:
-            if credential.user == login:
+            if credential.user_name == user_name:
                 cls.credential_list.remove(credential)
     
