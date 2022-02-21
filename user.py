@@ -4,6 +4,8 @@ class User:
     A User class that describes a user of the system
     '''
 
+    user_list = []
+
     def __init__(self, login, password) -> None:
         '''
         init method that is ran on each instance of the class
@@ -11,4 +13,5 @@ class User:
         self.login = login
         self.passwod = password
 
+    
     
