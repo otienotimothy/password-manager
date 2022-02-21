@@ -13,5 +13,9 @@ class User:
         self.login = login
         self.passwod = password
 
-    
+    def save_user(self):
+        '''
+        Functionality to add the created instance to the class variable user_list
+        '''
+        User.user_list.append(self)
     
