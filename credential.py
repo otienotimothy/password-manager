@@ -1,7 +1,9 @@
 from random import choice
 import string
 
-class Credential:
+from user import User
+
+class Credential(User):
     '''
     Credentials class to describe saved credantials
     '''
