@@ -6,11 +6,11 @@ class User:
 
     user_list = []
 
-    def __init__(self, login, password) -> None:
+    def __init__(self, user_name, password):
         '''
         init method that is ran on each instance of the class
         '''
-        self.login = login
+        self.login = user_name
         self.passwod = password
 
     def save_user(self):
